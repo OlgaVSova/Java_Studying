@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class bubble {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("C:\\Users\\ovasilev\\Documents\\numbers.txt"));
+        Scanner input = new Scanner(new File("\\home\\olga\\Documents\\list.txt"));
+                //"C:\\Users\\ovasilev\\Documents\\numbers.txt"));
 
         int size = 10;
         int[] numbers = new int[size];
