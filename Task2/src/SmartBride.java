@@ -1,32 +1,51 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class SmartBride {
-    public static void main(String[] args){
-        Scanner input = new Scanner(new File("\\home\\olga\\Documents\\list.txt"));
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner input = new Scanner(new File("\\home\\olga\\Documents\\groomlist.txt"));
 
-        int size = 10;
-        Groom[] numbers = new Groom[size];
+        Groom[] grooms = new Groom[10];
         int i;
         for (i = 0; input.hasNext(); i++){
-            numbers[i] = input.nextInt();
+            Groom newGroom = new Groom();
+            newGroom.surname = input.next();
+            newGroom.IQ = input.nextInt();
+
+            grooms[i] = newGroom;
         }
-        System.out.println(Arrays.toString(numbers));
+        //System.out.println(Arrays.toString(grooms));
 
 
+        int counter = 0, top = 3;
+        while (counter < top) {
+            for (i = 0; i < grooms.length-1; ++i) {
+                if (grooms[i].IQ > grooms[i + 1].IQ) {
+                    Groom tmp = grooms[i];
+                    grooms[i] = grooms[i + 1];
+                    grooms[i + 1] = tmp;
+                    //System.out.println(Arrays.toString(grooms));
+                }
+            }
+            counter++;
+        }
+        for(i = grooms.length-1; i >= grooms.length - top; i--){
+            int n = grooms.length - i;
+            grooms[i].place = n;
+            System.out.println(grooms[i]);
+        }
+        //System.out.println(Arrays.toString(grooms));
     }
-
-
 }
 
-class Groom{
+class Groom {
     int place;
     String surname;
     int IQ;
 
     @Override
-    public String toString() { return "Groom{"place + "." + surname + "IQ = " + IQ"}"; }
+    public String toString() { return place+". " + surname + " IQ: " + IQ;
+    }
 }
-
-
