@@ -25,20 +25,19 @@ public class bubble {
 
         int counter = 0;
         while (counter < size-1) {
-            for (i = 0; i < numbers.length-1-counter; ++i) {
+            for (i = 0; i < numbers.length-1-counter; i++) {
+                //System.out.println(i);
                 if (numbers[i] > numbers[i + 1]) {
                     int tmp = numbers[i];
                     numbers[i] = numbers[i + 1];
                     numbers[i + 1] = tmp;
-                    //System.out.println(Arrays.toString(numbers));
-                    counter = 0;
-                } else {
-                    counter++;
-                    System.out.println(counter);
+                    System.out.println(Arrays.toString(numbers));
                 }
             }
-            System.out.println(Arrays.toString(numbers));
+            counter++;
+            //System.out.println(counter);
+            //System.out.println(Arrays.toString(numbers));
         }
-        System.out.println(Arrays.toString(numbers));
+        //System.out.println(Arrays.toString(numbers));
     }
 }
