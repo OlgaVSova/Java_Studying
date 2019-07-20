@@ -31,13 +31,13 @@ public class bubble {
                     int tmp = numbers[i];
                     numbers[i] = numbers[i + 1];
                     numbers[i + 1] = tmp;
-                    System.out.println(Arrays.toString(numbers));
+                    //System.out.println(Arrays.toString(numbers));
                 }
             }
             counter++;
             //System.out.println(counter);
             //System.out.println(Arrays.toString(numbers));
         }
-        //System.out.println(Arrays.toString(numbers));
+        System.out.println(Arrays.toString(numbers));
     }
 }
