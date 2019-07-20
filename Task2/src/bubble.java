@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class bubble {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("/home/olga/Documents/list.txt"));
+        Scanner input = new Scanner(new File("/home/olga/Documents/list2.txt"));
 
         //System.out.println(Arrays.toString(numbers));
         int size = 10;
@@ -24,24 +24,20 @@ public class bubble {
         }
 
         int counter = 0;
-        while (counter < size-2) {
+        while (counter < size-1) {
             for (i = 0; i < numbers.length-1-counter; ++i) {
                 if (numbers[i] > numbers[i + 1]) {
                     int tmp = numbers[i];
                     numbers[i] = numbers[i + 1];
                     numbers[i + 1] = tmp;
-                    System.out.println(Arrays.toString(numbers));
+                    //System.out.println(Arrays.toString(numbers));
+                    counter = 0;
                 } else {
                     counter++;
                     System.out.println(counter);
                 }
             }
-//            if (counter < size-1){
-//                counter = 1;
-//            }
-//            else{
-//                break;
-//            }
+            System.out.println(Arrays.toString(numbers));
         }
         System.out.println(Arrays.toString(numbers));
     }
