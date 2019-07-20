@@ -6,15 +6,15 @@ import java.util.Scanner;
 public class bubble {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("\\home\\olga\\Documents\\list.txt"));
+        Scanner input = new Scanner(new File("/home/olga/Documents/list.txt"));
 
         //System.out.println(Arrays.toString(numbers));
         int size = 10;
-        int[] numbers = new int[10];
+        int[] numbers = new int[size];
         int i;
         for (i = 0; input.hasNext(); i++){
             if (i == numbers.length) {
-                int[] newNumbers = new int[numbers.length * 2];
+                int[] newNumbers = new int[size * 2];
                 // copy from the old small table to the new large one
                 System.arraycopy(numbers, 0, newNumbers, 0, i);
                 numbers = newNumbers;
@@ -24,21 +24,24 @@ public class bubble {
         }
 
         int counter = 0;
-        while (counter < numbers.length) {
-            for (i = 0; i < numbers.length-1; ++i) {
+        while (counter < size-2) {
+            for (i = 0; i < numbers.length-1-counter; ++i) {
                 if (numbers[i] > numbers[i + 1]) {
                     int tmp = numbers[i];
                     numbers[i] = numbers[i + 1];
                     numbers[i + 1] = tmp;
-                    //System.out.println(Arrays.toString(numbers));
+                    System.out.println(Arrays.toString(numbers));
                 } else {
                     counter++;
-                    //System.out.println(counter);
+                    System.out.println(counter);
                 }
             }
-            if (counter < numbers.length-1){
-                counter = 0;
-            }
+//            if (counter < size-1){
+//                counter = 1;
+//            }
+//            else{
+//                break;
+//            }
         }
         System.out.println(Arrays.toString(numbers));
     }
