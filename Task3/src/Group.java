@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.io.File;
@@ -39,8 +40,15 @@ public class Group {
         int i;
         for (i = 0; input.hasNext(); i++){
             User newUser = new User();
-//            newUser.firstName = input.next();
-//            newUser.secondName = input.next();
+            newUser.firstName = input.next();
+            if (users.contains(newUser.firstName)){
+
+            }
+            else{
+                newUser.secondNames.add(input.next());
+            }
+
+            users.add(newUser);
 
 
          }
@@ -53,7 +61,7 @@ public class Group {
 
 class User{
     String firstName;
-    String[] secondNames;
+    ArrayList<String> secondNames;
 
     @Override
     public String toString() {
