@@ -35,23 +35,22 @@ public class Group {
 //
 //            HashSet userNames = new newUser.firstName();
 // }
+//        HashSet<User> users = new HashSet<>();
+//        int i;
+//        for (i = 0; input.hasNext(); i++){
+//            User newUser = new User();
+//            newUser.firstName = input.next();
+//            if (users.contains(newUser.firstName)){
+//
+//            }
+//            else{
+//                newUser.secondNames.add(input.next());
+//            }
+//            users.add(newUser);
+//
+//         }
 
-        HashSet<User> users = new HashSet<>();
-        int i;
-        for (i = 0; input.hasNext(); i++){
-            User newUser = new User();
-            newUser.firstName = input.next();
-            if (users.contains(newUser.firstName)){
 
-            }
-            else{
-                newUser.secondNames.add(input.next());
-            }
-
-            users.add(newUser);
-
-
-         }
 
 
 
