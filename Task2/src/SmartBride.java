@@ -4,8 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SmartBride {
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("\\home\\olga\\Documents\\groomlist.txt"));
+
+    public static void main(String[] args) throws FileNotFoundException{
+        Scanner input = new Scanner(new File("C:\\Users\\ovasilev\\Documents\\grooms.txt"));
 
         Groom[] grooms = new Groom[10];
         int i;
@@ -46,6 +47,7 @@ class Groom {
     int IQ;
 
     @Override
-    public String toString() { return place+". " + surname + " IQ: " + IQ;
+    public String toString() {
+        return place+". " + surname + " IQ: " + IQ;
     }
 }
