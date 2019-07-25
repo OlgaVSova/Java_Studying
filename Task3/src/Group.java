@@ -4,8 +4,8 @@ import java.io.FileNotFoundException;
 
 public class Group {
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner input = new Scanner(new File ("C:\\Users\\ovasilev\\Documents\\users.txt"));
-                //"home/olga/Documents/passengers.txt"));
+        Scanner input = new Scanner(new File ("C:\\Users\\username\\Documents\\users.txt"));
+
 
     TreeSet<User> users = new TreeSet<>();
     for(; input.hasNext();) {
