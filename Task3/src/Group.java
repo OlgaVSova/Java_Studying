@@ -7,23 +7,29 @@ public class Group {
         Scanner input = new Scanner(new File ("C:\\Users\\ovasilev\\Documents\\users.txt"));
                 //"home/olga/Documents/passengers.txt"));
 
-        TreeSet<User> users = new TreeSet<>();
-        for(; input.hasNext();){
-            User newUser = new User;
-            newUser.firstName = input.next();
-            if(users.contains(newUser)){
-
+    TreeSet<User> users = new TreeSet<>();
+    for(; input.hasNext();) {
+        User newUser = new User();
+        newUser.firstName = input.next();
+        String secondName = input.next();
+            if (users.contains(newUser)) {
+                newUser.secondNames.add(secondName);
             }
+            else {
+                users.add(newUser);
+                newUser.secondNames.add(secondName);
+            }
+
+        }
+        System.out.println(users );
+
     }
 }
-
 
 
 class User{
     String firstName;
     ArrayList<String> secondNames = new ArrayList<>();
-
-
 
     @Override
     public String toString() {
@@ -31,8 +37,6 @@ class User{
     }
     public boolean equals(User obj){
         return this.firstName == obj.firstName;
-
-
     }
 }
 
