@@ -4,30 +4,30 @@ import java.io.FileNotFoundException;
 
 public class Group {
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner input = new Scanner(new File ("C:\\Users\\username\\Documents\\users.txt"));
+        Scanner input = new Scanner(new File ("C:\\Users\\ovasilev\\Documents\\users.txt"));
+                //"home/olga/Documents/passengers.txt"));
 
-
-    TreeSet<User> users = new TreeSet<>();
+    TreeSet<UserGroup> users = new TreeSet<>();
     for(; input.hasNext();) {
-        User newUser = new User();
+        UserGroup newUser = new UserGroup();
         newUser.firstName = input.next();
         String secondName = input.next();
             if (users.contains(newUser)) {
-                newUser.secondNames.add(secondName);
+                //надо найти объект с таким же именем и вписать в него!
+                //THATUser.secondNames.add(secondName);
+
             }
             else {
                 users.add(newUser);
                 newUser.secondNames.add(secondName);
             }
-
         }
         System.out.println(users );
-
     }
 }
 
 
-class User{
+class UserGroup {
     String firstName;
     ArrayList<String> secondNames = new ArrayList<>();
 
@@ -35,7 +35,7 @@ class User{
     public String toString() {
         return firstName +" "+ secondNames;
     }
-    public boolean equals(User obj){
+    public boolean equals (UserGroup obj){
         return this.firstName == obj.firstName;
     }
 }
